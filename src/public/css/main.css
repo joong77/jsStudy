@@ -1,0 +1,11 @@
+
+h1 { 
+    color: skyblue;
+}
+
+.check {
+    width: 100px;
+    height: 100px;
+    color:hsl(210, 13%, 50%);
+    border: 2px dotted steelblue ;
+}
