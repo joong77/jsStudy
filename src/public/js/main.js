@@ -1,5 +1,102 @@
 console.log('hi new guyes!');
 
+// setter and getter 
+let data = {
+    odd : [],
+    even : [],
+    setter함수(...rest){
+        [...rest].forEach((a)=>{
+            if(a%2 == 0){
+                this.odd.push(a);
+            } else {
+                this.even.push(a);
+            }
+        });
+    }
+  }
+data.setter함수(1,2,3,4,5);
+console.log(data);
+
+class Unit {
+    constructor(체력, 공격력){
+        this.con = 체력;
+        this.atk = 공격력;
+    }
+    get battlePoint(){
+        console.log(parseInt(this.atk)+parseInt(this.con));
+    }
+
+    set heel(hp){
+        this.con = parseInt(this.con)+parseInt(hp)
+        console.log(this.con);
+    }
+
+    set dmged(dmg){
+        this.con = parseInt(this.con)-parseInt(dmg);
+        console.log(this.con);
+    }
+}
+
+const unit1 = new Unit(100,5);
+
+console.log(unit1);
+
+unit1.dmged=75;
+unit1.heel=50;
+
+unit1.battlePoint;
+
+// console.log(data);
+// constructor making situation
+// class grammar 
+// class Person {
+//     constructor(name='unknown', age= Math.floor(Math.random()*100), skill='unknown'){
+//         this.name= name;
+//         this.age= age;
+//         this.skill= skill;
+//     }
+//     sayHi(){
+//         console.log(this.name + ': 안녕하시오!');
+//     }
+//     sayAttak(){
+//         console.log(this.name + ': 받아라 이놈 초 필살기 ' + this.skill + '@@@@@!!');
+//     }
+// }
+
+// const Nunu = new Person ('Nunu',100,'회오리공격');
+
+// Nunu.sayAttak();
+
+// class Monster extends Person {
+//     constructor(name,age,skill,item){
+//         super(name,age,skill);
+//         this.item= item;
+//     }
+
+//     sayDie(){
+//         console.log(this.name + ': 아 내 ' + this.item + '은... 안돼 ㅠㅠ');
+//     }
+// }
+
+// const Mob1 = new Monster('Skull', 50, '뼈때리기', '뼈갑옷');
+
+// Mob1.sayAttak();
+
+// setTimeout(()=>{Mob1.sayDie();},3000);
+    
+
+
+// Array.prototype.remove3 = function () {
+//     this.forEach((a,i)=>{
+//         if(a===3){this.splice(i,1); 
+//         console.log(i);}
+//     })
+// }
+
+// var arr = [1,2,3,4,3,5,6,3,2];
+// arr.remove3();
+
+// console.log(arr);
 
 // let 글자세기함수 = (a) => {
 //     const newArray=[...a]
@@ -166,23 +263,23 @@ console.log('hi new guyes!');
 // analistMan`양말: ${sacks}  바지: ${pents}`;
 
 
-let parents = { name : 'Kim'};
-let sun1 = {};
+// let parents = { name : 'Kim'};
+// let sun1 = {};
 
-sun1.__proto__ = parents;
+// sun1.__proto__ = parents;
 
-console.log(sun1.name);
+// console.log(sun1.name);
 
-function Students (a, b) {
-    this.name = a;
-    this.age = b;
-    this.sayHi = ()=>{
-        console.log('안녕 나는' + this.name + '이야')
-    }
-} 
+// function Students (a, b) {
+//     this.name = a;
+//     this.age = b;
+//     this.sayHi = ()=>{
+//         console.log('안녕 나는' + this.name + '이야')
+//     }
+// } 
 
-const 학생1 = new Students ('kim', 20);
-const 학생2 = new Students ('park', 21);
-const 학생3 = new Students ('Lee', 22);
+// const 학생1 = new Students ('kim', 20);
+// const 학생2 = new Students ('park', 21);
+// const 학생3 = new Students ('Lee', 22);
 
-학생3.sayHi();
+// 학생3.sayHi();
