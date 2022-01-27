@@ -1,50 +1,115 @@
 console.log('hi new guyes!');
 
+//promise 
+// const markunder = new Promise(function(resolve, reject){
+//   setTimeout(function(){
+//   const b = 3;
+//   const difficult = 1+b;
+//   resolve('전달파라미터');
+// }, 3000);
+// }); //성공/실패판정 머신
+
+// markunder
+// .then((결과)=>{
+//     console.log('성공!'+ 결과);
+// })
+// .catch(()=>{
+//     console.log('실패!!')
+// })
+
+const img1 = document.querySelector('#test');
+const imgChecker = new Promise (function(resolev, reject){
+    img1.addEventListener('load', function(){
+        resolev('로드완료');
+    });
+    img1.addEventListener('error', function(){
+        reject();
+    });
+});
+imgChecker
+.then((result)=>{
+    console.log(result);
+})
+.catch(()=>{
+    console.log('오류인듯');
+})
+img1.setAttribute('src', "https://codingapple1.github.io/kona.jpg")
+
+//Destructuring
+// const [age, name, man] = [30, 'lee', 'man'];
+// const { name: 이름 , age, sex = '남' } = { name: 'kim' , age: 30  }
+// const name = 'lee';
+// const age = '30';
+// const obj = { name , age}; //자주 쓰이는 문법
+// const obj = { name : 'kim', age : 30};
+// function hamsu({name, age}) {
+//     console.log(name);
+//     console.log(age);
+// }
+// hamsu(obj);
+// let 신체정보 = {
+//     body: {
+//       height: 190,
+//       weight: 70
+//     },
+//     size: ["상의 Large", "바지 30인치"],
+//   };
+// let [키, 몸무게, 상의사이즈, 하의사이즈] = [신체정보.body.height, 신체정보.body.weight, 신체정보.size[0], 신체정보.size[1]];
+
+// let {
+//     body: {
+//       height, 
+//       weight
+//     },
+//     size: [ 상의, 하의 ]
+//   } = 신체정보;
+
+
 // setter and getter 
-let data = {
-    odd : [],
-    even : [],
-    setter함수(...rest){
-        [...rest].forEach((a)=>{
-            if(a%2 == 0){
-                this.odd.push(a);
-            } else {
-                this.even.push(a);
-            }
-        });
-    }
-  }
-data.setter함수(1,2,3,4,5);
-console.log(data);
+// let data = {
+//     odd : [],
+//     even : [],
+//     setter함수(...rest){
+//         [...rest].forEach((a)=>{
+//             if(a%2 == 0){
+//                 this.odd.push(a);
+//             } else {
+//                 this.even.push(a);
+//             }
+//         });
+//     }
+//   }
+// data.setter함수(1,2,3,4,5);
+// console.log(data);
 
-class Unit {
-    constructor(체력, 공격력){
-        this.con = 체력;
-        this.atk = 공격력;
-    }
-    get battlePoint(){
-        console.log(parseInt(this.atk)+parseInt(this.con));
-    }
+// class Unit {
+//     constructor(체력, 공격력){
+//         this.con = 체력;
+//         this.atk = 공격력;
+//     }
+//     get battlePoint(){
+//         console.log(parseInt(this.atk)+parseInt(this.con));
+//     }
 
-    set heel(hp){
-        this.con = parseInt(this.con)+parseInt(hp)
-        console.log(this.con);
-    }
+//     set heel(hp){
+//         this.con = parseInt(this.con)+parseInt(hp)
+//         console.log(this.con);
+//     }
 
-    set dmged(dmg){
-        this.con = parseInt(this.con)-parseInt(dmg);
-        console.log(this.con);
-    }
-}
+//     set dmged(dmg){
+//         this.con = parseInt(this.con)-parseInt(dmg);
+//         console.log(this.con);
+//     }
+// }
 
-const unit1 = new Unit(100,5);
+// const unit1 = new Unit(100,5);
 
-console.log(unit1);
+// console.log(unit1);
 
-unit1.dmged=75;
-unit1.heel=50;
+// unit1.dmged=75;
+// unit1.heel=50;
 
-unit1.battlePoint;
+// unit1.battlePoint;
 
 // console.log(data);
 // constructor making situation
