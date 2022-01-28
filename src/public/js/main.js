@@ -1,5 +1,34 @@
 console.log('hi new guyes!');
 
+//for in 과 for of
+obj = {name: 'kim', age: 30}; 
+console.log(
+obj.name, 
+obj['name']
+);
+console.log(Object.getOwnPropertyDescriptor(obj, 'name'));
+for (let mon in obj){ //enumerable한 정보만 반복 
+    if(obj.hasOwnProperty(mon)){ //이거 안하면 부모 프로퍼티도 불러온다
+    console.log(obj[mon]);
+    }
+}
+let arr1 = [2,3,4,5];
+console.log(arr1[Symbol.iterator]()); 
+for (let newarr1 of arr1){ //'adfadf' 숫자도 가능 iterable한 자료 다가능
+    console.log(newarr1);
+}
+
+//구구단예제
+// let 데이터 = [1,2,3,4,5,6,7,8,9] ;
+// let num1 = [...데이터]
+// num1.shift();
+// for (let nnum of num1){
+//     for (let num of 데이터){
+//        console.log(nnum+'*'+num+'='+ num*nnum );
+//     }
+// }
+
+
 //promise 
 // const markunder = new Promise(function(resolve, reject){
 //   setTimeout(function(){
@@ -17,23 +46,60 @@ console.log('hi new guyes!');
 //     console.log('실패!!')
 // })
 
-const img1 = document.querySelector('#test');
-const imgChecker = new Promise (function(resolev, reject){
-    img1.addEventListener('load', function(){
-        resolev('로드완료');
-    });
-    img1.addEventListener('error', function(){
-        reject();
-    });
-});
-imgChecker
-.then((result)=>{
-    console.log(result);
-})
-.catch(()=>{
-    console.log('오류인듯');
-})
-img1.setAttribute('src', "https://codingapple1.github.io/kona.jpg")
+//서버에서 text 받아와서 콘솔창에 띄우기
+// fetch("https://codingapple1.github.io/hello.txt")
+// .then((response)=> response.text())
+// .then((result)=> console.log(result))
+// .then(fetch("https://codingapple1.github.io/hello2.txt")
+// .then((response)=> response.text())
+// .then((result)=> console.log(result))
+// );
+
+//promise 대신에 async await 사용법
+// const button1 = document.querySelector('#submit1');
+// const inputer = document.querySelector('#idea');
+// var mind = '하이';
+// button1.addEventListener('click', function(){
+//     inputer.value = mind;
+//     naming();
+// });
+// async function naming(){
+//     const m = new Promise((resolve,reject)=>{
+//     // resolve(1000);  
+//     reject('error');
+//     });
+//     // try {
+//     // const result = await m;
+//     // console.log(result);
+//     // } 
+//     // catch{
+//     // console.log('뭔일 있슈');
+//     // }
+//     m
+//     .then((result)=>console.log(result))
+//     .catch(()=>console.log('먼일있슈'))
+// };
+
+
+
+//이미지 로드시 실행 promise 코드
+// const img1 = document.querySelector('#test');
+// const imgChecker = new Promise (function(resolev, reject){
+//     img1.addEventListener('load', function(){
+//         resolev('로드완료');
+//     });
+//     img1.addEventListener('error', function(){
+//         reject();
+//     });
+// });
+// imgChecker
+// .then((result)=>{
+//     console.log(result);
+// })
+// .catch(()=>{
+//     console.log('오류인듯');
+// })
+// img1.setAttribute('src', "https://codingapple1.github.io/kona.jpg")
 
 //Destructuring
 // const [age, name, man] = [30, 'lee', 'man'];
